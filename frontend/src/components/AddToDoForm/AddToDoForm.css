@@ -1,0 +1,36 @@
+
+.form-container{
+    /* border: 1px solid red; */
+    box-shadow: 0 0 4px 0.4px gray;
+    padding: 15px;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 25px;
+}
+
+.label{
+    margin: 5px 20px 0 10px;
+    color: rgb(137, 134, 130);
+}
+
+.textarea{
+    width: 300px;
+    /* border: 1px solid rgb(137, 32, 8); */
+    border: none;
+    box-shadow: 0 0 3px 0px rgb(169, 170, 169);
+    border-radius: 5px;
+    height: 30px;
+    padding-left: 8px;
+}
+.submitBtn{
+    margin: 0 15px;
+    background-color: green;
+    border-radius: 4px;
+    color: white;
+    padding: 4px 15px;
+    border: none;
+    box-shadow: 0 0 3px 1px rgb(169, 170, 169);
+}
+.submitBtn:hover{
+    cursor: pointer;
+}
