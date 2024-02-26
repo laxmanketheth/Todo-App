@@ -1,6 +1,6 @@
 # Todo App
 
-This is a Todo App that allows you to add and delete tasks. It consists of a frontend and a backend, with the frontend built using Vite.
+This is a Todo App that allows you to add and delete tasks to the MongoDB database. It consists of a frontend and a backend, with the frontend built using Vite.
 
 ## Features
 
