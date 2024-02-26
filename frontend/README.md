@@ -22,4 +22,4 @@ This is a Todo App that allows you to add and delete tasks. It consists of a fro
 - Backend:
   - Node.js
   - Express.js
-  - MongoDB (or any other database of your choice)
+  - MongoDB
