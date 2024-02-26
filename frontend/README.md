@@ -14,8 +14,11 @@ This is a Todo App that allows you to add and delete tasks. It consists of a fro
 
 - Frontend:
   - Vite
-  - React (or any other frontend framework/library)
-  - CSS (or any other styling approach)
+  - React
+  - ReduxToolkit
+  - CSS
+  - JavaScript
+    
 - Backend:
   - Node.js
   - Express.js
