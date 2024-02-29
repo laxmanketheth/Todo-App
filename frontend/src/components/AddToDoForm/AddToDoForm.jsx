@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import './AddToDoForm.css'
 import { useDispatch } from 'react-redux'
-import { add } from '../../store/TodoSlice'
+import { addCurrentTodo } from '../../store/TodoSlice';
+// import { add } from '../../store/TodoSlice'
 
 const AddToDoForm = () => {
 
@@ -25,18 +26,21 @@ const AddToDoForm = () => {
             task: value
         }
 
-        fetch('http://localhost:8080/addtodo', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(todoData)
-        })
-            .then(res => res.json())
-            .then(data => {
-                return dispatch(add(data))
-            })
-            .catch(err => console.log(err))
+    
+        dispatch(addCurrentTodo(todoData))
+
+        // fetch('http://localhost:8080/addtodo', {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(todoData)
+        // })
+        //     .then(res => res.json())
+        //     .then(data => {
+        //         return dispatch(add(data))
+        //     })
+        //     .catch(err => console.log(err))
 
         setValue('')
     }

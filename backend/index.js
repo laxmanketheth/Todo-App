@@ -8,44 +8,56 @@ dotenv.config();
 const cors = require('cors')
 app.use(cors())
 
-const bodyParser= require('body-parser');
+const bodyParser = require('body-parser');
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 
 const ToDo = require('./models/Task');
 
 mongoose.connect(process.env.MONGO_URL)
-        .then(()=> console.log('DB connection successful'))
-        .catch((err)=> console.log(err))
+    .then(() => console.log('DB connection successful'))
+    .catch((err) => console.log(err))
 
-app.listen(8080,()=>{
+app.listen(8080, () => {
     console.log("listening to port 8080");
 })
 
-app.post('/addtodo', async(req,res) => {
+
+app.get('/', async (req, res) => {
+    try {
+        const allTodos = await ToDo.find()
+        // console.log(allTodos);
+        res.json(allTodos)
+    }
+    catch (err) {
+        console.log(err);
+    }
+})
+
+app.post('/addtodo', async (req, res) => {
     const newToDo = new ToDo({
-        task : req.body.task
+        task: req.body.task
     })
-    try{
+    try {
         const savedTodo = await newToDo.save()
         res.json(savedTodo)
         // console.log(savedTodo)
     }
-    catch(err){
+    catch (err) {
         console.log(err);
     }
 })
 
 
-app.delete('/todo/:id', async(req, res) =>{
+app.delete('/todo/:id', async (req, res) => {
     const deleteTodo = req.params.id
     // console.log(req.params.id);
 
-    try{
+    try {
         await ToDo.findByIdAndDelete(deleteTodo)
         res.json('todo has been deleted')
     }
-    catch(err){
+    catch (err) {
         console.log(err);
     }
 })
