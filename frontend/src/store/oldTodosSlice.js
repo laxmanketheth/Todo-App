@@ -61,9 +61,6 @@ const oldTodoSlice = createSlice({
          .addCase(deleteOldToDo.fulfilled, (state, action) => {
             state.deleteStatus = 'fulfilled'
             state.data = state.data.filter(todo => todo._id !== action.payload)
-            // console.log('state data after deleting')
-            // console.log(state.data);
-            // console.log(action.payload);
          })
          .addCase(deleteOldToDo.rejected, (state, action) => {
             state.deleteStatus = 'rejected'

@@ -1,7 +1,8 @@
 import {useEffect} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteOldToDo, getOldTodos } from '../../store/oldTodosSlice'
-// import { add } from '../../store/oldTodosSlice'
+import { Link }  from 'react-router-dom'
+import './OldTodos.css'
 
 const OldTodos = () => {
 
@@ -20,6 +21,10 @@ const OldTodos = () => {
 
     return (
         <div>
+            <Link to={'/deleteAlltodo'}>
+            <button className='deleteAllTodo' >Delete All Todos</button>
+            </Link>
+             
             {data.map((item, index) => {
                 return (
                     <div key={item._id} className="individualTask">

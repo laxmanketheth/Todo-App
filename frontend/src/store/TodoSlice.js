@@ -13,7 +13,7 @@ export const addCurrentTodo = createAsyncThunk('addCurrentTodo', async(todoData)
 });
 
 export const deleteCurrentToDo = createAsyncThunk('deleteCurrentToDo', async(id) => {
-      const response =  fetch(`http://localhost:8080/todo/${id}`,{
+      const response = await fetch(`http://localhost:8080/todo/${id}`,{
             method: 'DELETE'
         })
        const result = await response.json()
@@ -25,23 +25,11 @@ const todoSlice = createSlice({
    name: 'todoSlice',
    initialState: {
       data: [],
-      status: 'idle',
-      deleteStatus: 'idle'
+      status: 'pending',
+      deleteStatus: 'pending'
    },
    reducers: {
-      // add(state, action) {
-      
-      //    console.log('before'+ state.data.length);
-      //    state.data.push(action.payload)
-      //    console.log('add reducer');
-      //    console.log('after' + state.data.length);
-      //    console.log(state.status);
-      //    // return state
-      // },
-
-      // deleteToDo(state, action) {
-      //    state.data = state.data.filter(todo => todo._id !== action.payload)
-      // }
+     
    },
    extraReducers: (builder) => {
       builder
@@ -50,19 +38,18 @@ const todoSlice = createSlice({
          })
          .addCase(addCurrentTodo.fulfilled, (state, action) => {
             state.data.push(action.payload)
-            // console.log(state);
             state.status = 'fulfilled'
          })
          .addCase(addCurrentTodo.rejected, (state, action)=> {
             state.status = 'rejected'
          })
+
          .addCase(deleteCurrentToDo.pending, (state, action) => {
             state.deleteStatus = 'pending'
          })
          .addCase(deleteCurrentToDo.fulfilled, (state, action) => {
-            state.data = state.data.filter(todo => todo._id !== action.payload)
-            // console.log(state);
             state.deleteStatus = 'fulfilled'
+            state.data = state.data.filter(todo => todo._id !== action.payload)
          })
          .addCase(deleteCurrentToDo.rejected, (state, action)=> {
             state.deleteStatus = 'rejected'

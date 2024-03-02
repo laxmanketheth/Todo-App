@@ -61,3 +61,25 @@ app.delete('/todo/:id', async (req, res) => {
         console.log(err);
     }
 })
+
+app.delete('/deleteAlltodos', async(req, res)=>{
+   try{
+    const result = await ToDo.deleteMany({});
+    console.log('Deleted', result.deletedCount, 'documents');
+    res.json('All todos have been deleted');
+   } 
+   catch(err) {
+    console.log('an error occured');
+   }
+}) 
+
+// app.delete('/deleteAlltodos', async (req, res) => {
+//     try {
+//         const result = await ToDo.deleteMany({});
+//         console.log('Deleted', result.deletedCount, 'documents');
+//         res.json('All todos have been deleted');
+//     } catch (err) {
+//         console.error('Error deleting documents:', err);
+//         res.status(500).json('An error occurred while deleting todos');
+//     }
+// });
