@@ -73,6 +73,8 @@ const oldTodoSlice = createSlice({
          .addCase(deleteOldToDo.rejected, (state, action) => {
             state.deleteStatus = 'rejected'
          })
+
+         //the below is a new case that includes deleteAlltodos case
          .addCase(deleteAlltodos.pending, (state, action) => {
             state.deleteStatus = 'pending'
          })

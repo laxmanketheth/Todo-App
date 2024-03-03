@@ -20,7 +20,7 @@ mongoose.connect(process.env.MONGO_URL)
 
 app.listen(8080, () => {
     console.log("listening to port 8080");
-})
+});
 
 
 app.get('/', async (req, res) => {
@@ -32,7 +32,7 @@ app.get('/', async (req, res) => {
     catch (err) {
         console.log(err);
     }
-})
+});
 
 app.post('/addtodo', async (req, res) => {
     const newToDo = new ToDo({
@@ -46,7 +46,7 @@ app.post('/addtodo', async (req, res) => {
     catch (err) {
         console.log(err);
     }
-})
+});
 
 
 app.delete('/todo/:id', async (req, res) => {
@@ -60,7 +60,8 @@ app.delete('/todo/:id', async (req, res) => {
     catch (err) {
         console.log(err);
     }
-})
+});
+
 
 app.delete('/deleteAlltodos', async(req, res)=>{
    try{
@@ -71,7 +72,7 @@ app.delete('/deleteAlltodos', async(req, res)=>{
    catch(err) {
     console.log('an error occured');
    }
-}) 
+});
 
 // app.delete('/deleteAlltodos', async (req, res) => {
 //     try {

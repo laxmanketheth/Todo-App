@@ -1,0 +1,19 @@
+
+.textContainer{
+    /* border: 1px solid rebeccapurple; */
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.text{
+    color: gray;
+    box-shadow: 0 0 3px 0px rgb(92, 122, 92);
+}
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

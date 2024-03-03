@@ -1,19 +1,19 @@
-import {useEffect} from 'react'
+import { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { deleteOldToDo, getOldTodos } from '../../store/oldTodosSlice'
-import { Link }  from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './OldTodos.css'
 
 const OldTodos = () => {
 
-    const {data, status, deleteStatus} = useSelector((state) => state.oldTodoSlice);
+    const { data, status, deleteStatus } = useSelector((state) => state.oldTodoSlice);
     // console.log(data);
     const dispatch = useDispatch();
 
-    useEffect(()=>{
+    useEffect(() => {
         dispatch(getOldTodos())
-    },[deleteStatus]) // Fetch updated todos when deleteStatus changes
-    
+    }, [deleteStatus]) // Fetch updated todos when deleteStatus changes
+
     const handleDelete = (id) => {
         // console.log(id)
         dispatch(deleteOldToDo(id))
@@ -21,10 +21,6 @@ const OldTodos = () => {
 
     return (
         <div>
-            <Link to={'/deleteAlltodo'}>
-            <button className='deleteAllTodo' >Delete All Todos</button>
-            </Link>
-             
             {data.map((item, index) => {
                 return (
                     <div key={item._id} className="individualTask">
@@ -34,6 +30,12 @@ const OldTodos = () => {
                     </div>
                 )
             })}
+
+            {data.length > 0 &&
+                (<Link to={'/deleteAlltodo'}>
+                    <button className='deleteAllTodo' >Delete All Todos</button>
+                </Link>)
+            }
         </div>
     )
 }
