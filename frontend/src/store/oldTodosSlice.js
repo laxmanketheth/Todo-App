@@ -19,6 +19,14 @@ export const deleteOldToDo = createAsyncThunk('deleteTodo', async (id) => {
    return result;
 });
 
+export const deleteAlltodos = createAsyncThunk('deleteAlltodo', async () => {
+   const response = fetch('http://localhost:8080/deleteAlltodos', {
+      method: 'DELETE'
+   })
+   const data = await response.json()
+   return data;
+})
+
 
 const oldTodoSlice = createSlice({
    name: 'oldTodoSlice',
@@ -65,6 +73,17 @@ const oldTodoSlice = createSlice({
          .addCase(deleteOldToDo.rejected, (state, action) => {
             state.deleteStatus = 'rejected'
          })
+         .addCase(deleteAlltodos.pending, (state, action) => {
+            state.deleteStatus = 'pending'
+         })
+         .addCase(deleteAlltodos.fulfilled, (state, action) => {
+            state.deleteStatus = 'fulfilled'
+            
+         })
+         .addCase(deleteAlltodos.rejected, (state, action) => {
+            state.deleteStatus = 'rejected'
+         })
+         
    }
 })
 

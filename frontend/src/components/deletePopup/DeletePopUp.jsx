@@ -2,16 +2,14 @@ import React from 'react'
 import './DeletePopUp.css'
 import { Link } from 'react-router-dom'
 // import HomePage from '../../pages/HomePage'
-
+import { useDispatch } from 'react-redux'
+import { deleteAlltodos } from '../../store/oldTodosSlice'
 
 const DeletePopUp = () => {
 
+    const dispatch = useDispatch()
     const handledelete = () => {
-        fetch('http://localhost:8080/deleteAlltodos',{
-            method: 'DELETE'
-        })
-        .then(res => res.json())
-        .then(data => console.log(data))
+       dispatch(deleteAlltodos())
     }
 
     return (
