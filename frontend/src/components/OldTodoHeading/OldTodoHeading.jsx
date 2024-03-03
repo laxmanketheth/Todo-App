@@ -8,14 +8,15 @@ const OldTodoHeading = () => {
   const { data } = useSelector(state => state.oldTodoSlice)
   // console.log(data);
   return (
+    data.length > 1 && (
     <div>
-
       <div className='textContainer'>     
         <p className='text'> Previously added tasks
           <span className='icon'> <KeyboardDoubleArrowDownSharpIcon /></span>
         </p>
       </div>
     </div>
+    )
 
 
   )

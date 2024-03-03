@@ -9,8 +9,12 @@
 }
 
 .text{
-    color: gray;
+    color: rgb(237, 191, 191);
     box-shadow: 0 0 3px 0px rgb(92, 122, 92);
+    padding: 5px;
+    text-align: center;
+    /* height: 50px; */
+    width: 30vw;
 }
 .icon{
     display: flex;

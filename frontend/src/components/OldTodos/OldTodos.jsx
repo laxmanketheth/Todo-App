@@ -20,7 +20,7 @@ const OldTodos = () => {
     };
 
     return (
-        <div>
+        <div className='OldTodoContainer'>
             {data.map((item, index) => {
                 return (
                     <div key={item._id} className="individualTask">

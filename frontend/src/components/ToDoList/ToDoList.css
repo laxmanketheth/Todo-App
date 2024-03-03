@@ -1,5 +1,4 @@
-.individualTask {
-    border: 2px solid green;
+.individualTask { 
     border-radius: 5px;
     /* box-shadow: 0 0 3px 0px rgb(92, 122, 92); */
     box-shadow: 0 0 3px 0px rgb(169, 170, 169);
@@ -7,17 +6,19 @@
     justify-content: space-between;
     padding: 5px 30px;
     margin: 10px 0;
-    /* width: 50vw; */
     flex-wrap: wrap; 
+    color: rgb(213, 212, 212);
 }
 
 .deletebtn {
-    background-color: red;
+    /* background-color: rgb(223, 39, 39); */
+    background: linear-gradient(98.37deg, #ce3e25 0.99%, #780b0b 100%);
     color: white;
     border: none;
     box-shadow: 0 0 3px 0px rgb(92, 122, 92);
-    border-radius: 5px;
     margin: 5px 2px 0 0;
+    border-radius: 4px;
+    color: rgb(211, 211, 207);
 }
 
 .deletebtn:hover {

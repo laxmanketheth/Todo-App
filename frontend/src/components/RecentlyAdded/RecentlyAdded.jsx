@@ -9,7 +9,7 @@ const RecentlyAdded = () => {
   return (
     data.length === 0 && (
      <div className='textContainer'>
-     <p> here you will see all recently added tasks</p>
+     <p className='recenttext'> here you will see all recently added tasks</p>
     </div>
     )
     

@@ -1,12 +1,28 @@
 .deleteAllTodo{
-    background-color: red;
-    color: white;
+    color: rgb(211, 211, 207);
     border: none;
     box-shadow: 0 0 3px 0px rgb(92, 122, 92);
     border-radius: 5px;
-    /* margin-left: 10px; */
+    background: linear-gradient(98.37deg, #ce3e25 0.99%, #780b0b 100%);
+}
+
+.count{
+    /* background: linear-gradient(98.37deg, #a36055 0.99%, #780b0b 100%); */
+    background: linear-gradient(98.37deg, #5e859f 0.99%, #810d76 100%);
+    border-radius: 50%;
+    color: rgb(211, 211, 207);
 }
 
 .deleteAllTodo:hover {
     cursor: pointer;
 }
+.individualTask{
+    background: linear-gradient(98.37deg, #5e859f 0.99%, #810d76 100%);
+}
+.deletebtn{
+    color: rgb(211, 211, 207);
+}
+
+/* .OldTodoContainer{
+    background: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%);
+} */

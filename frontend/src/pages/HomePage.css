@@ -1,4 +1,6 @@
 .container{
+    /* background: linear-gradient(98.37deg, #f89e00 0.99%, #da2f68 100%); */
+    background: linear-gradient(98.37deg, #a226a8 0.99%, #6312a5 100%);
     border: 2px solid purple;
     margin:50px 200px;
     padding: 20px;
