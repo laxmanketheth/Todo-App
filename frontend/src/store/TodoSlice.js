@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const addCurrentTodo = createAsyncThunk('addCurrentTodo', async(todoData) => {
-    const data =  await fetch('todo-app-api-brown.vercel.app/addtodo', {
+    const data =  await fetch('https://todo-app-api-brown.vercel.app/addtodo', {
                   method: 'POST',
                   headers: {
                      'Content-Type': 'application/json'
@@ -13,7 +13,7 @@ export const addCurrentTodo = createAsyncThunk('addCurrentTodo', async(todoData)
 });
 
 export const deleteCurrentToDo = createAsyncThunk('deleteCurrentToDo', async(id) => {
-      const response = await fetch(`todo-app-api-brown.vercel.app/todo/${id}`,{
+      const response = await fetch(`https://todo-app-api-brown.vercel.app/todo/${id}`,{
             method: 'DELETE'
         })
        const result = await response.json()
