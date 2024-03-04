@@ -7,7 +7,17 @@ dotenv.config();
 
 const cors = require('cors');
 
-app.use(cors());
+const options = [
+    cors({
+      origin: '*',
+      methods: '*',
+      allowedHeaders: ['Content-Type', 'Authorization'],
+      credentials: true,
+    })
+  ];
+  
+app.use(options);
+  
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
