@@ -2,25 +2,20 @@
 const express = require('express');
 const app = express()
 const mongoose = require('mongoose');
+const cors = require('cors')
 const dotenv = require('dotenv');
 dotenv.config();
 
-const cors = require('cors');
-
-app.use(cors());
-
-const options = {
-      origin: 'https://todo-app-frontend-orpin.vercel.app/',
-      methods: "GET,POST,DELETE",
-      allowedHeaders: ['Content-Type', 'Authorization'],
-      credentials: true,
-    
-};
-app.use(cors(options));
-  
+app.use(cors(
+    {
+        origin: ["https://todo-app-frontend-orpin.vercel.app/"],
+        methods: ["POST", "GET", "DELETE"],
+        credentials: true
+    }
+));
+app.use(express.json())
 
   
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
