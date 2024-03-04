@@ -10,7 +10,7 @@ app.use(cors(
     {
         origin: ["https://todo-app-frontend-orpin.vercel.app"],
         methods: ["POST", "GET",  "DELETE"],
-        credential: true
+        credentials: true
     }
 ));
 
