@@ -3,7 +3,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // createAsyncThunk is used to handle asynchronous tasks in Reduxtoolkit
 export const getOldTodos = createAsyncThunk('gettodo', async () => {
-   const data = await fetch('todo-app-api-brown.vercel.app')
+   const data = await fetch('todo-app-api-brown.vercel.app/')
    const result = await data.json()
    return result;
 });
