@@ -5,8 +5,8 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 dotenv.config();
 
-const cors = require('cors')
-app.use(cors())
+const cors = require('cors');
+app.use(cors());
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
@@ -66,21 +66,10 @@ app.delete('/todo/:id', async (req, res) => {
 app.delete('/deleteAlltodos', async(req, res)=>{
    try{
     const result = await ToDo.deleteMany({});
-    console.log('Deleted', result.deletedCount, 'documents');
+    // console.log('Deleted', result.deletedCount, 'documents');
     res.json('All todos have been deleted');
    } 
    catch(err) {
     console.log('an error occured');
    }
 });
-
-// app.delete('/deleteAlltodos', async (req, res) => {
-//     try {
-//         const result = await ToDo.deleteMany({});
-//         console.log('Deleted', result.deletedCount, 'documents');
-//         res.json('All todos have been deleted');
-//     } catch (err) {
-//         console.error('Error deleting documents:', err);
-//         res.status(500).json('An error occurred while deleting todos');
-//     }
-// });
