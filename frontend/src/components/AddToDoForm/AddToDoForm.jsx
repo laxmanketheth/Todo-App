@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 import './AddToDoForm.css'
 import { useDispatch } from 'react-redux'
 import { addCurrentTodo } from '../../store/TodoSlice';
-// import { add } from '../../store/TodoSlice'
+
 
 const AddToDoForm = () => {
 
     const [value, setValue] = useState('');
-
     const dispatch = useDispatch();
 
     const handleChange = (e) => {
@@ -15,7 +14,6 @@ const AddToDoForm = () => {
         //    console.log(inputValue);
         setValue(inputValue)
     }
-    // console.log(value);
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -26,22 +24,7 @@ const AddToDoForm = () => {
             task: value
         }
 
-    
         dispatch(addCurrentTodo(todoData))
-
-        // fetch('http://localhost:8080/addtodo', {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(todoData)
-        // })
-        //     .then(res => res.json())
-        //     .then(data => {
-        //         return dispatch(add(data))
-        //     })
-        //     .catch(err => console.log(err))
-
         setValue('')
     }
 
