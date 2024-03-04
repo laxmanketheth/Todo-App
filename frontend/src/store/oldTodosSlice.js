@@ -10,7 +10,7 @@ export const getOldTodos = createAsyncThunk('gettodo', async () => {
 
 export const deleteOldToDo = createAsyncThunk('deleteTodo', async (id) => {
    // console.log(id)
-   const response = await fetch(`${baseURL}/${id}`, {
+   const response = await fetch(`${baseURL}/todo/${id}`, {
       method: 'DELETE'
    })
    //  console.log(response);

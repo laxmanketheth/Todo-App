@@ -14,7 +14,7 @@ export const addCurrentTodo = createAsyncThunk('addCurrentTodo', async(todoData)
 });
 
 export const deleteCurrentToDo = createAsyncThunk('deleteCurrentToDo', async(id) => {
-      const response = await fetch(`${baseURL}/${id}`,{
+      const response = await fetch(`${baseURL}/todo/${id}`,{
             method: 'DELETE'
         })
        const result = await response.json()
