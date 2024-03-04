@@ -7,16 +7,18 @@ dotenv.config();
 
 const cors = require('cors');
 
-const options = [
-    cors({
-      origin: '*',
-      methods: '*',
+app.use(cors());
+
+const options = {
+      origin: 'https://todo-app-frontend-orpin.vercel.app',
+      methods: "GET,POST,DELETE",
       allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true,
-    })
-  ];
+    
+};
+app.use(cors(options));
   
-app.use(options);
+
   
 
 const bodyParser = require('body-parser');
