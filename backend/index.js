@@ -14,23 +14,23 @@ const cors = require('cors');
 //     }
 // ));
 
-// const corsOptions = {
-//     origin: 'https://todo-app-frontend-orpin.vercel.app/',
-//     credentials: true,
-//     optionSuccessStatus: 200
-// }
+const corsOptions = {
+    origin: 'https://todo-app-frontend-orpin.vercel.app',
+    credentials: true,
+    optionSuccessStatus: 200
+}
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
-// app.use(function (req, res, next) {
-//     res.header('Access-Control-Allow-Origin', "https://todo-app-frontend-orpin.vercel.app/");
-//     res.header('Access-Control-Allow-Headers', true);
-//     res.header('Access-Control-Allow-Credentials', true);
-//     res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//     next();
-// });
+app.use(function (req, res, next) {
+    res.header('Access-Control-Allow-Origin', "https://todo-app-frontend-orpin.vercel.app");
+    res.header('Access-Control-Allow-Headers', true);
+    res.header('Access-Control-Allow-Credentials', true);
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+    next();
+});
 
-app.use(cors());
+// app.use(cors());
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
