@@ -10,7 +10,7 @@ const cors = require('cors');
 app.use(cors());
 
 const options = {
-      origin: 'https://todo-app-frontend-orpin.vercel.app',
+      origin: 'https://todo-app-frontend-orpin.vercel.app/',
       methods: "GET,POST,DELETE",
       allowedHeaders: ['Content-Type', 'Authorization'],
       credentials: true,
