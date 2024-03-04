@@ -6,7 +6,13 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const cors = require('cors');
-app.use(cors());
+app.use(cors(
+    {
+        origin: ["https://deploy-mern-1whq.vercel.app"],
+        methods: ["POST", "GET",  "DELETE"],
+        credential: true
+    }
+));
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.json());
