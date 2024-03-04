@@ -3,14 +3,14 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 // createAsyncThunk is used to handle asynchronous tasks in Reduxtoolkit
 export const getOldTodos = createAsyncThunk('gettodo', async () => {
-   const data = await fetch('http://localhost:8080/')
+   const data = await fetch('todo-app-api-brown.vercel.app/')
    const result = await data.json()
    return result;
 });
 
 export const deleteOldToDo = createAsyncThunk('deleteTodo', async (id) => {
    // console.log(id)
-   const response = await fetch(`http://localhost:8080/todo/${id}`, {
+   const response = await fetch(`todo-app-api-brown.vercel.app/${id}`, {
       method: 'DELETE'
    })
    //  console.log(response);
@@ -20,7 +20,7 @@ export const deleteOldToDo = createAsyncThunk('deleteTodo', async (id) => {
 });
 
 export const deleteAlltodos = createAsyncThunk('deleteAlltodo', async () => {
-   const response = fetch('http://localhost:8080/deleteAlltodos', {
+   const response = fetch('todo-app-api-brown.vercel.app/deleteAlltodos', {
       method: 'DELETE'
    })
    const data = await response.json()
