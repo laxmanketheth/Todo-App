@@ -8,7 +8,7 @@ dotenv.config();
 
 app.use(cors(
     {
-        origin: ["https://todo-app-frontend-orpin.vercel.app/"],
+        origin: ["https://todo-app-frontend-orpin.vercel.app"],
         methods: ["POST", "GET", "DELETE"],
         credentials: true
     }
