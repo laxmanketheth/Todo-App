@@ -8,7 +8,7 @@ dotenv.config();
 const cors = require('cors');
 app.use(cors(
     {
-        origin: ["https://deploy-mern-1whq.vercel.app"],
+        origin: ["https://todo-app-frontend-orpin.vercel.app/"],
         methods: ["POST", "GET",  "DELETE"],
         credential: true
     }
