@@ -9,7 +9,7 @@
             "dest": "/",
             "methods" : ["GET", "POST", "DELETE"],
             "headers" : {
-                "Access-Control-Allow-Origin" : "*"
+                "Access-Control-Allow-Origin" : "https://todo-app-backend-sigma.vercel.app/"
             }
         }
     ]
